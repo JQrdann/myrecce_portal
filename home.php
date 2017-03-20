@@ -12,7 +12,7 @@
       <div class="home-one">
           <div class="welcome-message">
               <h3>Hello, <?php echo $_SESSION['firstName']?>!</h3>
-              <h6>Thank you for using MyRecce. Make sure you follow us on social media to keep up to date!</h6>
+              <h6>[side-branch] Thank you for using MyRecce. Make sure you follow us on social media to keep up to date!</h6>
           </div>
       </div>
 
