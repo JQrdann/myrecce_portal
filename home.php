@@ -25,19 +25,19 @@
               <img class='box-1-face' src="images/upandrunning.png" alt="Icon-1"><!--'upandrunning.png' or 'somethingswrong.png-->
               <img class='box-1-icon' src="images/tick.png" alt="Icon-2"></a> <!--'tick.png' or 'x.png'-->
                 <div class="box-1-sub">
-                    <p class="box-1-subtext">100% up and running!</p>
+                    <p class="box-1-subtext">Still coding!</p>
                 </div>
           </div>
 
           <div class="box-2">
-              <h1 class="box-2-text">12+</h1>
+              <h1 class="box-2-text">0</h1>
                 <div class="box-2-sub">
                     <p class="box-2-subtext">creators signed up.</p>
                 </div>
           </div>
 
           <div class="box-3">
-              <h1 class="box-2-text">5+</h1>
+              <h1 class="box-2-text">0</h1>
                 <div class="box-3-sub">
                     <p class="box-3-subtext">locations available.</p>
                 </div>
