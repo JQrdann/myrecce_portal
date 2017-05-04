@@ -6,10 +6,14 @@
         </div>
 
         <div class='myaccount'>
-          <h3 class="myaccount-title">Hi, <?php echo $_SESSION['userID']?>!</h3>
+          <h3 class="myaccount-title">Hi, <?php echo $_SESSION['firstName']?>!</h3>
 
           <div class="myaccount-content">
             <p>This page will display information about the user and give them the ability to change certain items.</p>
+
+            <div class='editprofile-box'>
+
+            </div>
 
             <div class="change-password">
                 <form action="updateaccount.php" method="post">

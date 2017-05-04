@@ -6,7 +6,7 @@
         <h3 class="admin-title">Admin</h3>
 
         <div class="admin-content">
-          <p>Unsure what this page will be used for.</p>
+          <p>This page will be used for website admins showing; stats, analytics and more.</p>
         </div>
 
       </div>

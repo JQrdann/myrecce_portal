@@ -699,6 +699,14 @@ main {
     font-size: 30px;
 }
 
+.editprofile-box {
+    background-color: black;
+    width: 300px;
+    height: 300px;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
 .profile-picture {
     width: 200px;
     height: 200px;
