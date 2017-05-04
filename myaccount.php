@@ -11,6 +11,10 @@
           <div class="myaccount-content">
             <p>This page will display information about the user and give them the ability to change certain items.</p>
 
+            <div class='editprofile-box'>
+
+            </div>
+
             <div class="change-password">
                 <form action="updateaccount.php" method="post">
                     <input type="password" placeholder="Old Password" name="oldPassword"><br>
