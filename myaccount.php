@@ -14,10 +14,6 @@
                     </form>
                 </div>
             </div>
-
-            <div class='editprofile-box'>
-
-            </div>
           </div>
 
     </main>
