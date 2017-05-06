@@ -6,11 +6,19 @@
 <div class="myaccount-content">
     <div class="accountinfo">
         <h3>Edit Profile</h3>
+        <div class="change-usernameemail">
+            <form action="updateaccount.php" method="post">
+                <p>Username</p>
+                <input type="?" placeholder="<?php echo $_SESSION['username']?>" name="?">
+                <p>Email</p>
+                <input type="?" placeholder="<?php echo $_SESSION['email']?>" name="?">
+            </form>
+        </div>
         <div class="change-name">
             <form action="updateaccount.php" method="post">
-                <input type="?" placeholder="<?php echo $_SESSION['firstName']?>" name="?"><br>
-                <input type="?" placeholder="Surname" name="?"><br>
-                <input type="submit" name="submit" value="Change Name">
+                <p>Name</p>
+                <input type="?" placeholder="<?php echo $_SESSION['firstName']?>" name="?">
+                <input type="?" placeholder="<?php echo $_SESSION['lastName']?>" name="?">
             </form>
         </div>
         <div class="change-password">
@@ -24,6 +32,6 @@
     </div>
 </div>
 
-    </main>
+</main>
 </body>
 </html>

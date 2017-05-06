@@ -16,7 +16,7 @@ header {
     width: calc(100% - 50px);
     height: 60px;
     line-height: 60px;
-    background-color: #34495e;
+    background-color: white;
     position: fixed;
     z-index: 1;
     right: 0;
@@ -24,7 +24,7 @@ header {
 }
 
 .page-title {
-    color: white;
+    color: grey;
     float: left;
     margin-left: 20px;
     font-size: 1em;
@@ -675,19 +675,27 @@ main {
     font-size: 30px;
 }
 
+.myaccount-content {
+    background-color: #f7f7f7;
+}
+
 .accountinfo {
     width: 500px;
     height: 250px;
-    background-color: #f7f7f7;
+    background-color: white;
     margin-left: 20px;
     margin-top: 20px;
     border-radius: 2px;
-    border: 1px solid black;
+    border: 1px solid grey;
 }
 
 .accountinfo h3 {
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.accountinfo p {
+    font-size: 15px;
 }
 
 .change-password {
@@ -696,6 +704,11 @@ main {
 }
 
 .change-name {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.change-usernameemail {
     margin-left: 10px;
     margin-top: 10px;
 }
