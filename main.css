@@ -676,40 +676,9 @@ main {
 }
 
 .myaccount {
-    width: 100%;
-    height: 100%;
-    background-color: #f0f0f0;
-}
-
-.editprofile-box {
-    float: left;
+    width: 100px;
+    height: 100px;
     background-color: black;
-    width: 800px;
-    height: 600px;
-    margin-left: 30px;
-    margin-top: 30px;
-    border-radius: 3px;
-}
-
-.profile-box {
-    float: right;
-    background-color: white;
-    width: 500px;
-    height: 400px;
-    margin-right: 500px;
-    margin-top: 30px;
-    border-radius: 3px;
-}
-
-.profile-picture {
-    width: 200px;
-    height: 200px;
-    background: #34495e;
-    -moz-border-radius: 100px;
-    -webkit-border-radius: 100px;
-    border-radius: 100px;
-    margin-top: 30px;
-    margin-left: 30px;
 }
 
 .admin {
