@@ -5,6 +5,13 @@
 
         <div class="myaccount">
             <div class="editprofile-box">
+                <div class="change-name">
+                    <form action="updateaccount.php" method="post">
+                        <input type="?" placeholder="Old Password" name="oldPassword"><br>
+                        <input type="?" placeholder="New Password" name="newPassword"><br>
+                        <input type="submit" name="submit" value="Change Name">
+                    </form>
+                </div>
                 <div class="change-password">
                     <form action="updateaccount.php" method="post">
                         <input type="password" placeholder="Old Password" name="oldPassword"><br>
