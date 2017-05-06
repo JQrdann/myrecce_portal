@@ -8,10 +8,14 @@
         <h3>Edit Profile</h3>
         <div class="change-usernameemail">
             <form action="updateaccount.php" method="post">
-                <p>Username</p>
-                <input type="?" placeholder="<?php echo $_SESSION['username']?>" name="?">
-                <p>Email</p>
-                <input type="?" placeholder="<?php echo $_SESSION['email']?>" name="?">
+                <div class='left'>
+                  <p>Username</p>
+                  <input type="?" placeholder="<?php echo $_SESSION['username']?>" name="?">
+                </div>
+                <div class='left'>
+                  <p>Email</p>
+                  <input type="?" placeholder="<?php echo $_SESSION['email']?>" name="?">
+                </div>
             </form>
         </div>
         <div class="change-name">
