@@ -78,13 +78,9 @@ aside:hover .social-media-icons{
 }
 
 #time-overlay h1{
-    padding-right: 150px;
-    padding-top: 20px;
   font-size: 15em;
 }
 #time-overlay h2{
-  padding-right: 190px;
-  margin-top: -80px;
   font-size: 5em;
 }
 
@@ -736,6 +732,8 @@ main {
 .change-password {
     margin-left: 30px;
     margin-top: 10px;
+    clear: both;
+    padding-top: 10px;
 }
 
 .change-name {
@@ -758,6 +756,10 @@ main {
 }
 
 .change-firstlastname {
+  float: none;
+  clear: both;
+  margin-left: 30px;
+  padding-top: 10px;
 }
 
 .change-firstname {
@@ -766,6 +768,7 @@ main {
 
 .change-lastname {
     float: left;
+    padding-left: 10px;
 }
 
 .form-control {
