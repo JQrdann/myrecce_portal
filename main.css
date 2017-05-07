@@ -68,7 +68,7 @@ aside:hover .social-media-icons{
   position: fixed;
   width: 100%;
   height: 100vh;
-  background: rgba(0,0,0,.6);
+  background: rgba(43,60,78, .9);
   padding: 50px;
   color: white;
   z-index: 4;
@@ -77,10 +77,13 @@ aside:hover .social-media-icons{
 }
 
 #time-overlay h1{
-  font-size: 9em;
+    padding-right: 150px;
+    padding-top: 20px;
+  font-size: 15em;
 }
 #time-overlay h2{
-  padding-top: 20px;
+  padding-right: 190px;
+  margin-top: -80px;
   font-size: 5em;
 }
 
