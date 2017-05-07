@@ -757,8 +757,15 @@ main {
     padding-left: 10px;
 }
 
-.change-name {
-  clear: both;
+.change-firstlastname {
+}
+
+.change-firstname {
+    float: left;
+}
+
+.change-lastname {
+    float: left;
 }
 
 .form-control {

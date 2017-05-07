@@ -14,15 +14,20 @@
                 </div>
                 <div class='change-email'>
                   <p>Email</p>
-                  <input class="form-control" type="?" value="<?php echo $_SESSION['email']?>" name="?">
+                  <input class="form-control" type="?" value="<?php echo $_SESSION['email']?>" name="?"><br>
                 </div>
             </form>
         </div>
-        <div class="change-name">
+        <div class="change-firstlastname">
             <form action="updateaccount.php" method="post">
-                <p>Name</p>
+            <div class="change-firstname">
+                <p>First name</p>
                 <input class="form-control" type="?" value="<?php echo $_SESSION['firstName']?>" name="?">
+            </div>
+            <div class="change-lastname">
+                <p>Last name</p>
                 <input class="form-control" type="?" value="<?php echo $_SESSION['lastName']?>" name="?">
+            </div>
             </form>
         </div>
         <div class="change-password">
