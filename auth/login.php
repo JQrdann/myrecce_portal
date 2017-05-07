@@ -26,6 +26,7 @@
             $_SESSION['usertype'] = $row['UserType'];
             $_SESSION['username'] = $row['Username'];
             $_SESSION['firstName'] = $row['FirstName'];
+            $_SESSION['lastName'] = $row['LastName'];
             $_SESSION['email'] = $row['Email'];
 
             header('Location: ../home.php');
