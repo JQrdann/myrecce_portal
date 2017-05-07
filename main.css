@@ -20,7 +20,7 @@ header {
     position: fixed;
     z-index: 1;
     right: 0;
-    transition: 0.5s ease;
+    transition: 0.3s ease;
 }
 
 .page-title {
@@ -60,6 +60,13 @@ aside:hover .logout{
 
 aside:hover .social-media-icons{
     opacity: 1
+}
+
+aside:hover + header{
+  filter: blur(2px);
+}
+aside:hover ~ main{
+  filter: blur(2px);
 }
 
 .logo {
@@ -222,9 +229,11 @@ aside:hover .social-media-icons{
 
 main {
     width: calc(100% - 50px);
+    height: calc(100% - 40px);
     float: left;
     padding-left: 50px;
     margin-top: 40px;
+    transition: .3s;
 }
 
 .search-bar {
