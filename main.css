@@ -718,6 +718,7 @@ main {
     margin-top: 20px;
     border-radius: 2px;
     border: 1px solid #dddddd;
+    float: left;
 }
 
 .accountinfo h3 {
@@ -849,6 +850,7 @@ main {
     margin-top: 20px;
     border-radius: 2px;
     border: 1px solid #dddddd;
+    float: left;
 }
 
 .accountpass h3 {
@@ -882,6 +884,72 @@ main {
     border-radius: 2px;
     color: white;
     background-color: #2ecc71;
+    padding: 8px 12px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    margin-top: 20px;
+    margin-right: 30px;
+    float: right;
+}
+
+.accountpicture {
+    width: 770px;
+    height: 130px;
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 2px;
+    border: 1px solid #dddddd;
+    float: left;
+}
+
+.accountpicture h3 {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.accountpicture p {
+    font-size: 13px;
+    color: grey;
+}
+
+.choosefile {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.deleteaccount {
+    width: 770px;
+    height: 160px;
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 2px;
+    border: 1px solid #dddddd;
+    float: left;
+}
+
+.deleteaccount h3 {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.deleteaccount p {
+    font-size: 13px;
+    color: grey;
+}
+
+.deletecheckbox {
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+.form-control-deletebutton {
+    border-radius: 2px;
+    color: white;
+    background-color: #D91E18;
     padding: 8px 12px;
     text-decoration: none;
     cursor: pointer;

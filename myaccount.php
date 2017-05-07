@@ -61,6 +61,24 @@
             </form>
         </div>
     </div>
+    <div class="accountpicture">
+        <h3>Change your Picture</h3>
+        <div class="change-picture">
+            <form action="updateaccount.php" method="post">
+                <input class="choosefile" type="file" name="pic1" accept="image/*">
+                <input class="form-control-passbutton" type="submit" name="submit" value="Change Picture">
+            </form>
+        </div>
+    </div>
+    <div class="deleteaccount">
+        <h3>Delete your Account</h3>
+        <div class="deleteacc-form">
+            <form action="updateaccount.php" method="post">
+                <input class="deletecheckbox" type="checkbox" name="checkbox" value="checkbox"> By checking this box, you confirm you will be deleting your account.<br>
+                <input class="form-control-deletebutton" type="submit" name="submit" value="Delete my Account">
+            </form>
+        </div>
+    </div>
 </div>
 
 </main>
