@@ -62,12 +62,32 @@ aside:hover .social-media-icons{
     opacity: 1
 }
 
-aside:hover + header{
-  opacity: .6;
+#time-overlay{
+  right: 0;
+  text-align: right;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,.6);
+  padding: 50px;
+  color: white;
+  z-index: 4;
+  opacity: 0;
+  transition: opacity .3s;
 }
-aside:hover ~ main{
-  opacity: .6;
+
+#time-overlay h1{
+  font-size: 9em;
 }
+#time-overlay h2{
+  padding-top: 20px;
+  font-size: 5em;
+}
+
+aside:hover + #time-overlay{
+  opacity: 1;
+}
+
 
 .logo {
     margin: 0 auto;

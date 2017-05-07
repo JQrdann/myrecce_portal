@@ -53,6 +53,11 @@
         <div class="sidebar-overlay"></div>
     </aside>
 
+    <div id='time-overlay'>
+      <h1><?php echo date('H:i') ?></h1>
+      <h2><?php echo date('d-m-Y') ?></h2>
+    </div>
+
     <header>
         <h1 class="page-title"><?php echo $page ?></h1>
     </header>
