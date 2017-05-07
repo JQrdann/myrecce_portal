@@ -229,7 +229,11 @@ aside:hover ~ main{
 
 main {
     width: calc(100% - 50px);
+<<<<<<< HEAD
     height: calc(100% - 40px);
+=======
+    height: calc(100vh - 40px);
+>>>>>>> origin/side-branch
     float: left;
     padding-left: 50px;
     margin-top: 40px;
@@ -686,21 +690,23 @@ main {
 
 .myaccount-content {
     background-color: #f7f7f7;
+    padding-top: 20px;
+    height: 100%;
 }
 
 .accountinfo {
-    width: 500px;
-    height: 250px;
+    width: 700px;
+    height: 400px;
     background-color: white;
     margin-left: 20px;
     margin-top: 20px;
     border-radius: 2px;
-    border: 1px solid grey;
+    border: 1px solid #dddddd;
 }
 
 .accountinfo h3 {
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 .accountinfo p {
@@ -708,18 +714,50 @@ main {
 }
 
 .change-password {
-    margin-left: 10px;
+    margin-left: 30px;
     margin-top: 10px;
 }
 
 .change-name {
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 30px;
+    padding-top: 10px;
 }
 
 .change-usernameemail {
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.change-username {
+  float: left;
+}
+
+.change-email {
+    float: left;
+    padding-left: 10px;
+}
+
+.change-name {
+  clear: both;
+}
+
+.form-control {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    background-color: white;
+    padding: 8px 12px;
+}
+
+.form-control-button {
+    border-radius: 2px;
+    color: white;
+    background-color: #2ecc71;
+    padding: 8px 12px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    margin-top: 5px;
 }
 
 .admin {
@@ -1307,11 +1345,4 @@ input[type=locationprice2]:focus {
     height: 50px;
     background-color: blue;
     opacity: 0;
-}
-
-.left{
-  float: left;
-}
-.change-name{
-  clear: both;
 }
