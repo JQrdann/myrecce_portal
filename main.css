@@ -63,10 +63,10 @@ aside:hover .social-media-icons{
 }
 
 aside:hover + header{
-  filter: blur(2px);
+  opacity: .6;
 }
 aside:hover ~ main{
-  filter: blur(2px);
+  opacity: .6;
 }
 
 .logo {
