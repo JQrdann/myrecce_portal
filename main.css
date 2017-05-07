@@ -74,6 +74,7 @@ aside:hover .social-media-icons{
   z-index: 4;
   opacity: 0;
   transition: opacity .3s;
+  pointer-events: none;
 }
 
 #time-overlay h1{
