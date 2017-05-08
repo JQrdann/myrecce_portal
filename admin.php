@@ -2,14 +2,21 @@
     $page = 'Admin';
     include('includes/header.php')
 ?>
-      <div class='admin'>
-        <h3 class="admin-title">Admin</h3>
 
-        <div class="admin-content">
-          <p>This page will be used for website admins showing; stats, analytics and more.</p>
+
+    <div class="admin-content">
+        <div class="welcomebox">
+            <div class="welcomeboxtitle">
+                <h3>Hi, <?php echo $_SESSION['firstName']?></h3>
+                <p>(<?php echo $_SESSION['username']?>)</p>
+            </div>
         </div>
-
-      </div>
+        <div class="statsbox">
+            <div class="statsboxtext">
+                <p>It would be great to have stats of the site here! Is it possible to get code to display information from Google Analytics?</p>
+            </div>
+        </div>
+    </div>
     </main>
 </body>
 </html>
