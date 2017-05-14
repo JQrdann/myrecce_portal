@@ -13,18 +13,18 @@ body {
 }
 
 header {
-    width: calc(100% - 50px);
+    width: calc(100%);
     height: 60px;
     line-height: 60px;
-    background-color: white;
+    background-color: #34495E;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     right: 0;
     transition: 0.3s ease;
 }
 
 .page-title {
-    color: grey;
+    color: white;
     float: left;
     margin-left: 20px;
     font-size: 1em;
@@ -36,7 +36,7 @@ aside {
     width: 50px;
     text-align: left;
     height: 100vh;
-    z-index: 5;
+    z-index: 2;
     transition: 0.5s ease;
     overflow: hidden;
 }
@@ -71,7 +71,7 @@ aside:hover .social-media-icons{
   background: rgba(43,60,78, .9);
   padding: 50px;
   color: white;
-  z-index: 4;
+  z-index: 1;
   opacity: 0;
   transition: opacity .3s;
   pointer-events: none;
@@ -115,7 +115,6 @@ aside:hover + #time-overlay{
 .sidebar-logo {
     height: 60px;
     line-height: 60px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     text-align: center;
     margin: 0 auto;
 }
