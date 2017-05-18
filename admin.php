@@ -16,6 +16,11 @@
                 <p>It would be great to have stats of the site here! Is it possible to get code to display information from Google Analytics?</p>
             </div>
         </div>
+        <div class="calendarbox">
+            <div class="calendarboxtext">
+                <p>Maybe have the MyRecce Google Calendar here?</p>
+            </div>
+        </div>
     </div>
     </main>
 </body>

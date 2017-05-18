@@ -1003,6 +1003,23 @@ main {
     margin-top: 30px;
 }
 
+.calendarbox {
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 2px;
+    border: 1px solid #dddddd;
+}
+
+.calendarboxtext p {
+    font-size: 13px;
+    color: grey;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
 .back-button {
     width: 70px;
     height: 70px;
