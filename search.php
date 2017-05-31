@@ -3,7 +3,7 @@
     include('includes/header.php');
 ?>
     <div class="search-bar">
-        <input type='text' class="input" id='search' placeholder="Recce Name">
+        <input type='text' class="input" id='search' placeholder="Keyword(s)">
         Type:
         <select class="form-control" id="type" name="type" class="input-xlarge">
             <option value="" selected="selected">Any</option>
@@ -36,6 +36,10 @@
     </div>
 
     <div class='search-recces'>
+
+    </div>
+
+    <div class="quickmapview">
 
     </div>
 

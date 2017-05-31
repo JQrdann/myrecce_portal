@@ -12,24 +12,6 @@ body {
     min-height: 100vh;
 }
 
-header {
-    width: calc(100%);
-    height: 60px;
-    line-height: 60px;
-    background-color: #34495E;
-    position: fixed;
-    z-index: 2;
-    right: 0;
-    transition: 0.3s ease;
-}
-
-.page-title {
-    color: white;
-    float: left;
-    margin-left: 20px;
-    font-size: 1em;
-}
-
 aside {
     position: fixed;
     top: 0;
@@ -136,6 +118,8 @@ aside:hover + #time-overlay{
 .icon {
     height: 100%;
     vertical-align: middle;
+    padding-right: 10px;
+    padding-bottom: 7px;
 }
 
 .search-icon {
@@ -251,31 +235,31 @@ main {
     height: calc(100vh - 40px);
     float: left;
     padding-left: 50px;
-    padding-top: 40px;
     transition: .3s;
 }
 
 .search-bar {
     width: 100%;
-    height: 80px;
+    height: 100px;
     line-height: 80px;
-    background-color: #27ae60;
+    background-color: white;
     position: fixed;
     z-index: 1;
     padding-left: 20px;
+    box-shadow: 1px -40px 5px 45px #888888;
 }
 
 .search-bar input {
-    height: 30px;
-    font-size: 20px;
-    border: none;
-    border-radius: 0.1em;
-    padding: 2px;
+    height: 40px;
+    font-size: 15px;
+    border: 2px solid #dddddd;
+    border-radius: 2px;
+    padding: 0px;
     padding-left: 10px;
 }
 
 .search-bar input[type=text] {
-    width: 250px;
+    width: 400px;
 }
 
 .search-bar input[type=number] {
@@ -288,8 +272,16 @@ main {
 }
 
 .search-recces {
-    padding-top: 80px;
+    padding-top: 100px;
     overflow: hidden;
+    width: 50%;
+    float: left;
+}
+
+.quickmapview {
+    width: 100%;
+    float: right;
+    background-color: #27ae60;
 }
 
 .home-recce {
@@ -451,6 +443,7 @@ main {
     background-color: #3498DB;
     position: absolute;
     color: white;
+    border-radius: 5px;
 }
 
 .box-1-sub {
@@ -459,6 +452,7 @@ main {
     top: 150px;
     background-color: #2079b4;
     position: relative;
+    border-radius: 5px;
 }
 
 .box-1-subtext {
@@ -488,6 +482,7 @@ main {
     background-color: #db3445;
     position: absolute;
     color: white;
+    border-radius: 5px;
 }
 
 .box-2-text {
@@ -504,6 +499,7 @@ main {
     top: 150px;
     background-color: #b4202f;
     position: relative;
+    border-radius: 5px;
 }
 
 .box-2-subtext {
@@ -519,6 +515,7 @@ main {
     background-color: #db7734;
     position: absolute;
     color: white;
+    border-radius: 5px;
 }
 
 .box-3-text {
@@ -535,6 +532,7 @@ main {
     top: 150px;
     background-color: #b45b20;
     position: relative;
+    border-radius: 5px;
 }
 
 .box-3-subtext {
@@ -563,37 +561,49 @@ main {
 }
 
 .three-facebook {
-    height: 60px;
-    padding-top: 20px;
+    height: 40px;
+    padding-top: 15px;
     padding-left: 50px;
 }
 
 .three-twitter {
-    width: 60px;
-    height: 60px;
-    padding-top: 20px;
+    height: 40px;
+    padding-top: 15px;
     padding-left: 20px;
 }
 
 .three-youtube {
-    width: 60px;
-    height: 60px;
-    padding-top: 20px;
+    height: 40px;
+    padding-top: 15px;
     padding-left: 20px;
 }
 
 .three-mountains {
-    width: 60px;
-    height: 60px;
-    padding-top: 20px;
+    height: 40px;
+    padding-top: 15px;
     padding-left: 20px;
 }
 
 .three-2ndsubheading {
     padding-left: 50px;
-    padding-top: 40px;
+    padding-top: 30px;
     font-family: 'Montserrat', sans-serif;
     color: #34495e;
+}
+
+.feedbackbutton {
+    border-radius: 2px;
+    color: white;
+    background-color: #2ecc71;
+    padding: 8px 12px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 100px;
+    height: 25px;
 }
 
 .twitter {

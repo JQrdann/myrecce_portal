@@ -33,8 +33,8 @@
             <a href='myrecces.php'><li <?php if($page == 'myrecces'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/my-recces.svg" width="25px" height="25px"><span class="menu-text">  MY RECCES</span></li></a> <!-- For 'Location Provider' account type -->
             <a href='favourites.php'><li <?php if($page == 'favourites'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/favourites.svg" width="25px" height="25px"><span class="menu-text">  FAVOURITES</span></li></a> <!-- For 'Filmmaker' account type -->
             <a href='calendar.php'><li <?php if($page == 'calendar'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/calendar.svg" width="25px" height="25px"><span class="menu-text">  CALENDAR</span></li></a> <!-- Undecided (maybe just for 'Location Provider' account type) -->
-            <a href='myaccount.php'><li <?php if($page == 'myaccount'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/my-account.svg" width="25px" height="25px"><span class="menu-text">  MY ACCOUNT</span></li></a> <!-- For both account types -->
-            <a href='admin.php'><li <?php if($page == 'admin'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/admin.svg" width="25px" height="25px"><span class="menu-text">  ADMIN</span></li></a> <!-- For admin account types -->
+            <a href='myaccount.php'><li <?php if($page == 'myaccount'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/myaccount.png" width="25px" height="25px"><span class="menu-text">  MY ACCOUNT</span></li></a> <!-- For both account types -->
+            <a href='admin.php'><li <?php if($page == 'admin'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/admin.png" width="25px" height="25px"><span class="menu-text">  ADMIN</span></li></a> <!-- For admin account types -->
           </ul>
         </div>
 
@@ -57,9 +57,5 @@
       <h1><?php echo date('H:i') ?></h1>
       <h2><?php echo date('d-m-Y') ?></h2>
     </div>
-
-    <header>
-        <h1 class="page-title"><?php echo $page ?></h1>
-    </header>
 
     <main>

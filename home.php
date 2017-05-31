@@ -54,7 +54,8 @@
           <a href='#'><img class='three-youtube' src="images/youtube.png" alt="Youtube"</a>
           <a href='#'><img class='three-mountains' src="images/mountains.png" alt="Mountains"</a>
           <p class="three-2ndsubheading">By sharing you are helping creators gain access to more locations around the world :)</p>
-
+          <p class="three-2ndsubheading">As we continue to develop MyRecce, you may stumble across some bugs. Please do let us know if something is wrong, we value your feedback:</p>
+          <a href='portalcontact.php'><div class="feedbackbutton">Contact Us!</div></a>
       </div>
   </div>
 </main>
