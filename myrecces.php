@@ -6,17 +6,23 @@
         <h3 class="myrecs-title">My Recces</h3>
 
         <div class="myrecs-content">
-          <p>This page will hold a list of recces/locations created by the user. If the user has only posted one
-          recce then it should cover the whole page/display a recce page. If the user has posted more than one recce
-          the page should display a list before display the chosen recce.</p>
+          <p>Click the button below to make a new recce or, click on one of your recce's to edit!</p>
         </div>
 
-        <div class="createareccegodiv">
-          <a href='/myrecce/myrecce_portal/createrecce.php' class="createreccego">Create a Recce</a>
+        <div class="myrecs-bar">
+            <div class="myrecs-baroptions">
+                <p>Options to 'Select All', 'Private recces', 'Password Protected recces', 'Delete All'.</p>
+            </div>
+
+            <div class="createareccegodiv">
+              <a href='/myrecce/myrecce_portal/createrecce.php' class="createreccego">Create a Recce</a>
+            </div>
         </div>
 
-        <div class="user-recces">
+        <div class="myrecs-sec2">
+            <div class="user-recces">
 
+            </div>
         </div>
     </main>
     <script>
