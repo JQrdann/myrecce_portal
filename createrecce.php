@@ -5,16 +5,17 @@
     <div class="createrecce-content">
         <form action="create-script.php" method="post" enctype="multipart/form-data">
             <div class="create-section-1 form-group">
-                <h1>Create A Recce</h1>
+                <h1>Create a new Recce</h4>
+                <h4>The basics!</h3><br>
                 <input class="form-control" type="text" name="name" required placeholder="Location Name">
                 <input class="form-control" type="text" name="owner-name" required placeholder="Owner name">
-                <input class="form-control" type="text" name="price" required placeholder="Price">
+                <input class="form-control" type="text" name="price" required placeholder="Price"><br>
+                <textarea class="form-control" required placeholder="Please give a short description about this location" name="description"></textarea>
                 <h3>How are you associated to this location?</h3>
                 <input class="form-control" type="radio" name="association" value="Owner" checked>I am the owner<br>
-                <input class="form-control" type="radio" name="association" value="Worker" checked>I work there<br>
-                <input class="form-control" type="radio" name="association" value="Associate" checked>I know the owner<br>
-                <textarea class="form-control" required placeholder="Please give a short description about this location" name="description"></textarea>
-                <button type="button" class="back-button">Back</button>
+                <input class="form-control" type="radio" name="association" value="Worker">I work there<br>
+                <input class="form-control" type="radio" name="association" value="Associate">I know the owner<br>
+                <button type="button" class="back-button2">Back</button>
                 <button type="button" class="next-button">Next</button>
             </div>
             <div class="create-section-2 form-group">
@@ -310,7 +311,7 @@
                         </select>
                     </div>
                 </div>
-                <button type="button" class="back-button">Back</button>
+                <button type="button" class="back-button2">Back</button>
                 <button type="button" class="next-button">Next</button>
             </div>
             <div class="create-section-3 form-group">
@@ -335,7 +336,7 @@
                         <input type="file" name="pic6" accept="image/*">
                     </div>
                 </div>
-                <button type="button" class="back-button">Back</button>
+                <button type="button" class="back-button2">Back</button>
                 <button type="button" class="next-button">Next</button>
             </div>
             <div class="create-section-4 form-group">
@@ -385,7 +386,7 @@
                     <option value="Other">Other</option><!-- pop up to fill in -->
                 </select>
                 <br>
-                <button type="button" class="back-button">Back</button>
+                <button type="button" class="back-button2">Back</button>
                 <button type="submit" class="next-button" name="submit">Create</button>
             </div>
         </form>
