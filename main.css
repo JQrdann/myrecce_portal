@@ -279,9 +279,31 @@ main {
 }
 
 .quickmapview {
-    width: 100%;
-    float: right;
+    width: 50%;
+    height: 100%;
+    float: left;
     background-color: #27ae60;
+    position: relative;
+}
+
+.quickmapview h3 {
+    padding-top: 200px;
+    padding-left: 10px;
+    color: white;
+}
+
+.quickmapview-subbox {
+    background-color: black;
+    height: 200px;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+}
+
+.quickmapview-subbox h3 {
+    padding-top: 10px;
+    padding-left: 10px;
+    color: white;
 }
 
 .home-recce {
