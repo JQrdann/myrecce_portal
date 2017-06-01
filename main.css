@@ -254,7 +254,6 @@ main {
     font-size: 15px;
     border: 2px solid #dddddd;
     border-radius: 2px;
-    padding: 0px;
     padding-left: 10px;
 }
 
@@ -283,7 +282,8 @@ main {
     height: 100%;
     float: left;
     background-color: #27ae60;
-    position: relative;
+    position: fixed;
+    right: 0;
 }
 
 .quickmapview h3 {

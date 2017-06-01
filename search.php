@@ -40,7 +40,7 @@
     </div>
 
     <div class="quickmapview">
-        <h3>This is where the map will go. This section also needs to stick to the page and be 100% the height of the page. I couldn't figure out how to do that :'(</h3>
+        <h3>Clicking on a recce will display a small amount of information here.</h3>
         <div class="quickmapview-subbox">
             <h3>Quick view design idea. Map above and a little bit of information with a 'View full recce' button here.</h3>
         </div>
