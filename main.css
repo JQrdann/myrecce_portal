@@ -240,13 +240,13 @@ main {
 
 .search-bar {
     width: 100%;
-    height: 100px;
+    height: 75px;
     line-height: 80px;
     background-color: white;
     position: fixed;
     z-index: 1;
     padding-left: 20px;
-    box-shadow: 1px -40px 5px 45px #888888;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
 .search-bar input {
@@ -270,13 +270,6 @@ main {
     font-size: 15px;
 }
 
-.search-recces {
-    padding-top: 100px;
-    overflow: hidden;
-    width: 50%;
-    float: left;
-}
-
 .quickmapview {
     width: 50%;
     height: 100%;
@@ -292,6 +285,8 @@ main {
     color: white;
 }
 
+
+
 .quickmapview-subbox {
     background-color: black;
     height: 200px;
@@ -306,54 +301,64 @@ main {
     color: white;
 }
 
-.home-recce {
-    width: 250px;
-    height: 300px;
-    background-color: pink;
-    margin: 20px;
-    float: left;
+.search-recces {
+    padding-top: 85px;
     overflow: hidden;
-    background-size: cover;
-    position: relative;
-    z-index: 0;
-}
-
-.home-recce-title {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 250px;
+    width: 50%;
+    float: left;
     text-align: center;
-    color: white;
-    z-index: 5;
 }
 
-.home-recce-overlay {
-    width: 250px;
-    position: absolute;
-    height: 300px;
-    background-color: black;
-    opacity: 0;
-    transition: 0.3s;
+.recce{
+  border-radius: .1em;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  position: relative;
+  display: inline-block;
+  margin: 2%;
+  width: 300px;
+  height: 275px;
+  text-align: left;
+  cursor: pointer;
 }
-
-.home-recce-overlay:hover {
-    opacity: 0.5;
+.recce-picture{
+  width: 100%;
+  height: 200px;
+  background-size: cover;
 }
-
-.home-recce-desc {
-    opacity: 0;
-    padding: 20px;
-    color: white;
-    transition: 0.3s;
-    visibility: hidden;
-    z-index: 5;
+.recce-favourite{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 15px;
+  height: 15px;
 }
-
-.home-recce-overlay-button:hover+.home-recce-desc {
-    opacity: 1;
-    visibility: visible;
-    ;
+.recce-favourite path{
+  fill: white;
+}
+.recce-price{
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-align: right;
+  width: auto;
+  height: 15px;
+}
+.recce-details{
+  width: 100%;
+  height: 75px;
+  background: white;
+}
+.recce-location{
+  color: #aaaaaa;
+  padding: 10px;
+  height: 20px;
+  width: calc(100% - 20px);
+}
+.recce-features{
+  padding-left: 10px;
+  height: 25px;
+  width: calc(100% - 20px);
 }
 
 .welcome-message {
@@ -1108,47 +1113,6 @@ main {
     color: white;
     width: auto;
     float: left;
-}
-
-.recce-title {
-    font-weight: bold;
-    font-size: 70px;
-    padding-top: 250px;
-    padding-left: 25px;
-    text-shadow: 3px 3px 10px black;
-}
-
-.recce-price {
-    padding-left: 25px;
-}
-
-.recce-content {
-    width: 100%;
-    height: auto;
-    background-color: white;
-    padding-bottom: 20px;
-}
-
-.recce-content h3 {
-    padding-top: 20px;
-    padding-left: 25px;
-}
-
-.recce-content p {
-    padding-top: 5px;
-    padding-left: 25px;
-}
-
-.recce-poster {
-    width: 100%;
-    height: 400px;
-    background-color: #27ae60;
-}
-
-.recce-poster h1 {
-    color: white;
-    padding-left: 260px;
-    margin-top: -120px;
 }
 
 .poster-image-out {

@@ -4,7 +4,7 @@
 ?>
     <div class="search-bar">
         <input type='text' class="input" id='search' placeholder="Keyword(s)">
-        Type:
+        <!--Type:
         <select class="form-control" id="type" name="type" class="input-xlarge">
             <option value="" selected="selected">Any</option>
             <option value="House">House</option>
@@ -28,11 +28,7 @@
             <option value="Woods/Forest">Woods/Forest</option>
             <option value="Lake/River">Lake/River</option>
             <option value="Other">Other</option>
-        </select>
-        Price between:
-        <input type="number" class="input" name="price-low" id="price-low" min="1">
-        and
-        <input type="number" class="input" name="price-high" id="price-low" min="1">
+        </select>-->
     </div>
 
     <div class='search-recces'>
@@ -44,7 +40,6 @@
         <div class="quickmapview-subbox">
             <h3>Quick view design idea. Map above and a little bit of information with a 'View full recce' button here.</h3>
         </div>
-
     </div>
 
     <div id='loader'>
@@ -54,6 +49,35 @@
 </div>
 </main>
 <script>
+    //AJAX function to print stock items
+    function search(count) {
+        //$titleOp = $("#filter-title-option").val();
+        $title = $("#search").val();
+
+        //AJAX call
+        $.post('search-script.php', {
+            "title": $title,
+            "count": count
+        }, function(data, status) {
+            if (status == "success") {
+                console.log(data);
+                $obj = JSON.parse(data) //automatically appends to current json object
+                //render the object
+                showItems($obj)
+            } else {
+                $(".search-recces").html("There was an error fetching the data from the server");
+            }
+        });
+    }
+
+    function showItems(items) {
+        $(".search-recces").html("");
+        for (var i = 0; i < items.length; i++) {
+            $content = "<div class='recce'><div class='recce-picture' style='background-image: url("+ '"' + items[i].Photo1 + '"' + ")'><div class='recce-favourite'><img src='icons/heart-empty.svg' style='width: 35px; height: 35px;'></div><div class='recce-price'>&pound;"+items[i].Price+"</div></div><div class='recce-details'><div class='recce-location'>123 somewhere</div><div class='recce-features'>wifi</div></div></div>"
+            $(".search-recces").append($content);
+        }
+    }
+
     function writeAddressName(latLng) {
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({
@@ -106,45 +130,15 @@
 
       window.onload = geolocateUser;
 
-    $type = '';
-    $price_low = 0;
-    $price_high = 0;
-    $limit = 50;
+      $limit = 0;
 
     $(".input").on("input",function(){
-        $limit = 50;
-        search();
-    });
-
-    $(".price").on("input",function(){
-        $price_low = $("#price-low").val();
-        $price_high = $("#price-high").val();
-        search();
-    });
-
-    $("#type").change(function(){
-        $type = $("#type").val();
-        if($type == 'Any'){
-            $type = '';
-        }
-        $limit = 50;
-        search();
+        search(0);
     });
 
     $(document).ready(function(){
-        search();
+        search(0);
     });
-
-    function search(){
-
-        $search = $("#search").val();
-
-        $string = "search-script.php?f=Name&t=" + $type //+ "&p1=" + $price_low + "&p2=" + $price_high;
-
-        $.post($string,{"s":$search,"limit":$limit}, function($data){
-            $(".search-recces").html($data);
-        });
-    }
 
     $(window).scroll(function() {
        if($(window).scrollTop() + $(window).height() == $(document).height()) {

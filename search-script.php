@@ -1,52 +1,31 @@
 <?php
-require_once 'auth/connect.php';
+    session_start();
 
-session_start();
-
-$filter = $_GET['f'];
-$lim = $_POST['limit'];
-
-//default
-$query = "SELECT * FROM recces LIMIT 1,50";
-$limit = " LIMIT $lim";
-
-if($filter == 'Name'){
-
-    $title  = htmlentities($_POST['s'])
-
-    $query = "SELECT * FROM recces WHERE `Name` LIKE '%$title%'";
-    $order = " ORDER BY ID DESC";
-    $type = '';
-
-    if ($_GET['t'] != '') {
-        $type = " AND `Type` LIKE '$_POST[t]'";
+    if(!(isset($_SESSION['usertype']))){
+        header("Location: /myrecce/myrecce_root/index.php");
     }
 
-    $query .= $type . $order . $limit;
+    require_once 'auth/connect.php';
 
-}else if($filter == 'Submitter'){
-    $username = $_SESSION['username'];
-    $query = "SELECT * FROM recces WHERE `Submitter` LIKE '$username'";
-}
+    $count = $_POST['count'];
+    $limit = $count+50;
+    $limit = "$count, $limit";
 
-$data=$conn->query($query);
-while($row=$data->fetch_assoc()){
-    $image = $row['Photo1'];
-    $title = $row['Name'];
-    $desc = $row['Description'];
-    $id = $row['ID'];
+    //placeholder limit, implement top lines
+    //$limit = "50";
 
-    echo "
-        <a href='recce-view.php?id=$id' class='home-recce-link'><div class='home-recce' style='background-image: url(" . '"' . $image . '"' . "')>
-        <div class='home-recce-image'>
-        </div>
-        <div class='home-recce-title'>
-          <h1> $title </h1>
-        </div>
-        <a href='recce-view.php?id=$id' class='home-recce-overlay-button'><div class='home-recce-overlay'></div></a>
-        <div class='home-recce-desc'><p>$desc</p></div>
-        </div></a>
-    ";
-}
+    $title = htmlentities($_POST['title']);
 
+    $query =  "SELECT * FROM recces WHERE `Name` LIKE '%$title%' ORDER BY id DESC LIMIT $limit";
+
+    $result = $conn->query($query);
+
+    $jsonobject = array();
+    while($row = $result->fetch_assoc())
+    {
+        $jsonobject[] = $row;
+    }
+
+    //return json object
+    echo json_encode($jsonobject);
 ?>
