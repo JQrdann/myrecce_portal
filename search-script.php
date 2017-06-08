@@ -12,7 +12,9 @@ $limit = " LIMIT $lim";
 
 if($filter == 'Name'){
 
-    $query = "SELECT * FROM recces WHERE `Name` LIKE '%$_POST[s]%'";
+    $title  = htmlentities($_POST['s'])
+
+    $query = "SELECT * FROM recces WHERE `Name` LIKE '%$title%'";
     $order = " ORDER BY ID DESC";
     $type = '';
 
