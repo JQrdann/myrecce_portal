@@ -73,7 +73,7 @@
     function showItems(items) {
         $(".search-recces").html("");
         for (var i = 0; i < items.length; i++) {
-            $content = "<div class='recce'><div class='recce-picture' style='background-image: url("+ '"' + items[i].Photo1 + '"' + ")'><div class='recce-favourite'><img src='icons/heart-empty.svg' style='width: 35px; height: 35px;'></div><div class='recce-price'>&pound;"+items[i].Price+"</div></div><div class='recce-details'><div class='recce-location'>123 somewhere</div><div class='recce-features'>wifi</div></div></div>"
+            $content = "<div class='recce'><div class='recce-picture' style='background-image: url("+ '"' + items[i].Photo1 + '"' + ")'><div class='recce-favourite'><img src='icons/heart-empty.svg' style='width: 35px; height: 35px;'></div><div class='recce-price'>&pound;"+items[i].Price+"</div></div><div class='recce-details'><div class='recce-location'>North London</div><div class='recce-name'>"+items[i].Name+"</div></div></div>"
             $(".search-recces").append($content);
         }
     }

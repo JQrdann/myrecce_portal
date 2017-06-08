@@ -271,7 +271,7 @@ main {
 }
 
 .quickmapview {
-    width: 50%;
+    width: calc(38% - 20px);
     height: 100%;
     float: left;
     background-color: #27ae60;
@@ -304,7 +304,7 @@ main {
 .search-recces {
     padding-top: 85px;
     overflow: hidden;
-    width: 50%;
+    width: 62%;
     float: left;
     text-align: center;
 }
@@ -314,7 +314,7 @@ main {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   position: relative;
   display: inline-block;
-  margin: 2%;
+  margin: 1%;
   width: 300px;
   height: 275px;
   text-align: left;
@@ -355,7 +355,7 @@ main {
   height: 20px;
   width: calc(100% - 20px);
 }
-.recce-features{
+.recce-name{
   padding-left: 10px;
   height: 25px;
   width: calc(100% - 20px);
