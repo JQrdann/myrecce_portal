@@ -87,6 +87,55 @@ $(document).ready(function() {
         }
     }
 
+    $('main').on('click', '.recce', function(e){
+      if($(e.target).attr('class') == 'heart'){
+        var heart = $('.heart', this);
+        heart.stop().animate({
+          height: 45,
+          width: 45,
+          'padding-left': '5px',
+          'padding-top': '5px'
+        }, 150).delay(50).animate({
+          height: 35,
+          width: 35,
+          'padding-left': '10px',
+          'padding-top': '10px'
+        }, 150);
+
+        var src = heart.attr('src');
+
+        if(src == 'icons/heart-empty.svg'){
+          heart.attr("src", 'icons/heart.svg');
+        }else{
+          heart.attr("src", 'icons/heart-empty.svg');
+        }
+
+        return;
+      }
+
+      if($(e.target).attr('class') == 'eye' || $(e.target).attr('class') == 'pupil' || $(e.target).attr('class') == 'eye watched'){
+        var eye = $('.eye', this);
+        var pupil = $('.pupil', this);
+        pupil.stop().animate({
+          left: '2px',
+          top: '14px'
+        }, 150).delay(50).animate({
+          left: '13px',
+          top: '3px'
+        }, 300).animate({
+          left: '8px',
+          top: '9px'
+        }, 150);
+        eye.toggleClass('watched');
+        return;
+      }
+
+      var id = $(this).attr('data-id');
+      //window.location.replace('recce-view.php?id='+id);
+    });
+
+});
+
     //AJAX function to print stock items
     function search(count) {
         //$titleOp = $("#filter-title-option").val();
@@ -98,6 +147,7 @@ $(document).ready(function() {
             "count": count
         }, function(data, status) {
             if (status == "success") {
+                console.log(data);
                 $obj = JSON.parse(data) //automatically appends to current json object
                 //render the object
                 showItems($obj)
@@ -108,10 +158,21 @@ $(document).ready(function() {
     }
 
     function showItems(items) {
-        $("main").html("");
+        $(".search-recces").html("");
         for (var i = 0; i < items.length; i++) {
-            $content = "<div class='home-recce' style='background-image: url('" + items.Photo1 + "')><div class='home-recce-image'></div><div class='home-recce-title'><h1> " + items.Name + "</h1></div><div class='home-recce-overlay'></div><div class='home-recce-desc'><p> " + items.Description + "</p></div></div>"
-            $("#search-recces").append($content);
+            $content = "<div class='recce' data-id='"+items[i].ID+"'><div class='recce-picture' style='background-image: url("+ '"' + items[i].Photo1 + '"' + ")'><div class='recce-favourite'><img class='heart' src='icons/heart-empty.svg'></div><div class='eye'><div class='pupil'></div></div><div class='recce-price'>&pound;"+items[i].Price+"</div></div><div class='recce-details'><div class='recce-location'>North London</div><div class='recce-name'>"+items[i].Name+"</div></div></div>"
+            $(".search-recces").append($content);
         }
     }
-})
+
+      /*$('.heart').click(function(){
+        //e.stopPropagation();
+
+      });*/
+
+    //if at bottom of page
+    $(window).scroll(function() {
+       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+           more();
+       }
+    });

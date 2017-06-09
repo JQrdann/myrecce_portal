@@ -14,12 +14,12 @@
         $postcode = htmlentities($_POST['postal-code']);
         $country = htmlentities($_POST['country']);
         $pics = array('pic1','pic2','pic3','pic4','pic5','pic6');
-        $features = htmlentities($_POST['features']);
+        $features = $_POST['features'];
         $features = implode(",", $features);
         $price = htmlentities($_POST['price']);
-        $extras = htmlentities($_POST['extras']);
+        $extras = $_POST['extras'];
         $extras = implode(", ", $extras);
-        $submitter = $_SESSION['username']);
+        $submitter = $_SESSION['username'];
         $owner = htmlentities($_POST['owner-name']);
 
         $valid = true;
@@ -48,10 +48,10 @@
         if($valid){
             $db_query = "INSERT INTO `recces` (`Name`, `Association`, `Description`, `Type`, `AddressLine1`, `AddressLine2`, `City`, `State/County`, `Zip/Postcode`, `Country`, `Photo1`, `Photo2`, `Photo3`, `Photo4`, `Photo5`, `Photo6`, `Location Features`, `Price`, `Extras`, `Submitter`, `Owner`) VALUES ('$name', '$association', '$description', '$type', '$address_line1', '$address_line2', '$city', '$region', '$postcode', '$country', '$pics[0]', '$pics[1]', '$pics[2]', '$pics[3]', '$pics[4]', '$pics[5]', '$features', '$price', '$extras', '$submitter', '$owner')";
 
-            if ($conn->query($sql) === TRUE) {
-                echo 'Recce creates successfully!';
+            if ($conn->query($db_query)) {
+                header('Location: myaccount.php');
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Error: " . $db_query . "<br>" . $conn->error;
             }
         }
 

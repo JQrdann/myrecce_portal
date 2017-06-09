@@ -26,17 +26,19 @@
             <a href='home.php'><img class='logo' src="images/myrecce.png" alt="MyRecce-Logo"></a>
         </div>
 
-        <div class='menu-items'>
-          <ul>
-            <a href='home.php'><li <?php if($page == 'home'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/home.svg" width="25px" height="25px"><span class="menu-text">  HOME</span></li></a> <!-- For both account types -->
-            <a href='search.php'><li <?php if($page == 'search'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/search.svg" width="25px" height="25px"><span class="menu-text">  SEARCH</span></li></a> <!-- Undecided (maybe just for 'Filmmaker' account type) -->
-            <a href='myrecces.php'><li <?php if($page == 'myrecces'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/my-recces.svg" width="25px" height="25px"><span class="menu-text">  MY RECCES</span></li></a> <!-- For 'Location Provider' account type -->
-            <a href='favourites.php'><li <?php if($page == 'favourites'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/favourites.svg" width="25px" height="25px"><span class="menu-text">  FAVOURITES</span></li></a> <!-- For 'Filmmaker' account type -->
-            <a href='calendar.php'><li <?php if($page == 'calendar'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/calendar.svg" width="25px" height="25px"><span class="menu-text">  CALENDAR</span></li></a> <!-- Undecided (maybe just for 'Location Provider' account type) -->
-            <a href='myaccount.php'><li <?php if($page == 'myaccount'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/myaccount.png" width="25px" height="25px"><span class="menu-text">  MY ACCOUNT</span></li></a> <!-- For both account types -->
-            <a href='admin.php'><li <?php if($page == 'admin'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/admin.png" width="25px" height="25px"><span class="menu-text">  ADMIN</span></li></a> <!-- For admin account types -->
-          </ul>
-        </div>
+        <nav>
+          <div class='menu-items'>
+            <ul>
+              <a href='home.php'><li <?php if($page == 'home'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/home.svg" width="25px" height="25px"><span class="menu-text">  HOME</span></li></a> <!-- For both account types -->
+              <a href='search.php'><li <?php if($page == 'search'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/search.svg" width="25px" height="25px"><span class="menu-text">  SEARCH</span></li></a> <!-- Undecided (maybe just for 'Filmmaker' account type) -->
+              <a href='myrecces.php'><li <?php if($page == 'myrecces'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/my-recces.svg" width="25px" height="25px"><span class="menu-text">  MY RECCES</span></li></a> <!-- For 'Location Provider' account type -->
+              <a href='favourites.php'><li <?php if($page == 'favourites'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/favourites.svg" width="25px" height="25px"><span class="menu-text">  FAVOURITES</span></li></a> <!-- For 'Filmmaker' account type -->
+              <a href='calendar.php'><li <?php if($page == 'calendar'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/calendar.svg" width="25px" height="25px"><span class="menu-text">  CALENDAR</span></li></a> <!-- Undecided (maybe just for 'Location Provider' account type) -->
+              <a href='myaccount.php'><li <?php if($page == 'myaccount'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/myaccount.png" width="25px" height="25px"><span class="menu-text">  MY ACCOUNT</span></li></a> <!-- For both account types -->
+              <a href='admin.php'><li <?php if($page == 'admin'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/admin.png" width="25px" height="25px"><span class="menu-text">  ADMIN</span></li></a> <!-- For admin account types -->
+            </ul>
+          </div>
+        </nav>
 
         <div class='logout'>
             <a href='auth/logout.php'><h4 class="logout-content">Log out!</h4></a>

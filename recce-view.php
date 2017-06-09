@@ -2,10 +2,20 @@
     $page = 'Search';
     include('includes/header.php');
 
-    $con = new mysqli('localhost', 'root', 'root', 'myrecce');
-    $query = "SELECT * FROM recces WHERE `ID` = $_GET[id]";
-    $data=$con->query($query);
-    $row=$data->fetch_assoc();
+    require_once 'auth/connect.php';
+
+    $id = $_GET['id'];
+
+    $query = $conn->prepare("SELECT * FROM recces WHERE `ID` = ?");
+    $query->bind_param("s", $id);
+
+    $query->execute();
+
+    $query->store_result();
+
+    if($query->num_rows == 1){
+        $row = $query->get_result();
+    }
 ?>
       <div class='cover-image' style="<?php echo 'background-image: url(' . $row['Photo1'] . ')'; ?>">
           <div class='back-button'>

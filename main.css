@@ -18,7 +18,7 @@ aside {
     width: 50px;
     text-align: left;
     height: 100vh;
-    z-index: 2;
+    z-index: 3;
     transition: 0.5s ease;
     overflow: hidden;
 }
@@ -53,7 +53,7 @@ aside:hover .social-media-icons{
   background: rgba(43,60,78, .9);
   padding: 50px;
   color: white;
-  z-index: 1;
+  z-index: 2;
   opacity: 0;
   transition: opacity .3s;
   pointer-events: none;
@@ -327,14 +327,49 @@ main {
 }
 .recce-favourite{
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 0;
+  left: 0;
   width: 15px;
   height: 15px;
 }
 .recce-favourite path{
   fill: white;
 }
+.heart{
+  width: 35px;
+  height: 35px;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.eye {
+  width: 25px;
+  height: 25px;
+  border: solid 1pt #fff;
+  border-radius:  75% 15%;
+  position: absolute;
+  left: 55px;
+  top: 15px;
+  transform: rotate(45deg);
+  transition: .3s;
+}
+.watched{
+  background-color: #27ae60;;
+  border: solid 1pt #27ae60;;
+}
+.pupil {
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border: solid 1pt white;
+  border-radius: 50%;
+  left: 8px;
+  top: 9px;
+  background-color: white;
+}
+
+
 .recce-price{
   color: white;
   position: absolute;
