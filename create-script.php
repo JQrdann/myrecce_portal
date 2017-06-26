@@ -46,7 +46,7 @@
         }
 
         if($valid){
-            $db_query = "INSERT INTO `recces` (`Name`, `Association`, `Description`, `Type`, `AddressLine1`, `AddressLine2`, `City`, `State/County`, `Zip/Postcode`, `Country`, `Photo1`, `Photo2`, `Photo3`, `Photo4`, `Photo5`, `Photo6`, `Location Features`, `Price`, `Extras`, `Submitter`, `Owner`) VALUES ('$name', '$association', '$description', '$type', '$address_line1', '$address_line2', '$city', '$region', '$postcode', '$country', '$pics[0]', '$pics[1]', '$pics[2]', '$pics[3]', '$pics[4]', '$pics[5]', '$features', '$price', '$extras', '$submitter', '$owner')";
+            $db_query = "INSERT INTO `recces` (`Name`, `Association`, `Description`, `Type`, `AddressLine1`, `AddressLine2`, `City`, `State/County`, `Postcode`, `Country`, `Photo1`, `Photo2`, `Photo3`, `Photo4`, `Photo5`, `Photo6`, `Location Features`, `Price`, `Extras`, `Submitter`, `Owner`) VALUES ('$name', '$association', '$description', '$type', '$address_line1', '$address_line2', '$city', '$region', '$postcode', '$country', '$pics[0]', '$pics[1]', '$pics[2]', '$pics[3]', '$pics[4]', '$pics[5]', '$features', '$price', '$extras', '$submitter', '$owner')";
 
             if ($conn->query($db_query)) {
                 header('Location: myaccount.php');

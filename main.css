@@ -270,35 +270,33 @@ main {
     font-size: 15px;
 }
 
-.quickmapview {
-    width: calc(38% - 20px);
-    height: 100%;
+#quickmapview {
+    width: 38%;
+    height: 80%;
     float: left;
     background-color: #27ae60;
-    position: fixed;
+    position: fixed !important;
     right: 0;
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 2.5em;
 }
-
-.quickmapview h3 {
-    padding-top: 200px;
-    padding-left: 10px;
-    color: white;
-}
-
-
 
 .quickmapview-subbox {
-    background-color: black;
-    height: 200px;
-    width: 100%;
-    bottom: 0;
-    position: absolute;
-}
-
-.quickmapview-subbox h3 {
-    padding-top: 10px;
-    padding-left: 10px;
     color: white;
+    background-color: #27ae60;
+    height: calc(20% - 40px);
+    width: calc(38% - 40px);
+
+    padding: 20px;
+
+    bottom: 0;
+    right: 0;
+    position: fixed;
 }
 
 .search-recces {

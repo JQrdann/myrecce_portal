@@ -35,11 +35,12 @@
 
     </div>
 
-    <div class="quickmapview">
-        <h3>Clicking on a recce will display a small amount of information here.</h3>
-        <div class="quickmapview-subbox">
-            <h3>Quick view design idea. Map above and a little bit of information with a 'View full recce' button here.</h3>
-        </div>
+    <div id="quickmapview">
+        <h3>Map Loading...</h3>
+    </div>
+
+    <div class="quickmapview-subbox">
+        <h3>Click a recce or a map icon to view it's info here!</h3>
     </div>
 
     <div id='loader'>
@@ -55,6 +56,12 @@
 
     $(document).ready(function(){
         search(0);
+    });
+
+    $(document).ready(function() {
+
+
+
     });
 </script>
 </body>

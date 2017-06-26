@@ -131,10 +131,13 @@ $(document).ready(function() {
       }
 
       var id = $(this).attr('data-id');
-      //window.location.replace('recce-view.php?id='+id);
+      $('.quickmapview-subbox').html(id);
     });
 
+    initMap();
 });
+
+    var searchStrings = [];
 
     //AJAX function to print stock items
     function search(count) {
@@ -162,13 +165,98 @@ $(document).ready(function() {
         for (var i = 0; i < items.length; i++) {
             $content = "<div class='recce' data-id='"+items[i].ID+"'><div class='recce-picture' style='background-image: url("+ '"' + items[i].Photo1 + '"' + ")'><div class='recce-favourite'><img class='heart' src='icons/heart-empty.svg'></div><div class='eye'><div class='pupil'></div></div><div class='recce-price'>&pound;"+items[i].Price+"</div></div><div class='recce-details'><div class='recce-location'>North London</div><div class='recce-name'>"+items[i].Name+"</div></div></div>"
             $(".search-recces").append($content);
+
+            var searchString = items[i].AddressLine1 + ' ' + items[i].AddressLine2 + ' ' + items[i].City + ' ' + items[i].Postcode;
+            searchStrings.push([items[i].ID, searchString]);
         }
     }
 
-      /*$('.heart').click(function(){
-        //e.stopPropagation();
 
-      });*/
+    function initMap() {
+        var lat, lng;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+        } else {
+            alert('It seems like Geolocation, which is required for this page, is not enabled in your browser. Please use a browser which supports it.');
+        }
+
+        function errorFunction(position){
+            console.log('There was an error');
+        }
+
+
+        function successFunction(position) {
+            lat = position.coords.latitude;
+            lng = position.coords.longitude;
+            console.log(lat, lng);
+
+            var userPos = ['Your Location', lat, lng];
+
+            var map = new google.maps.Map(document.getElementById('quickmapview'), {
+              zoom: 10,
+              center: new google.maps.LatLng(userPos[1], userPos[2]),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+
+            var infowindow = new google.maps.InfoWindow();
+            var geocoder = new google.maps.Geocoder;
+
+            var marker, i;
+
+            var userPosIcon = {
+                    url: 'icons/mapIcon.png',
+                    // This marker is 20 pixels wide by 32 pixels high.
+                    size: new google.maps.Size(32, 44),
+                    // The origin for this image is (0, 0).
+                    origin: new google.maps.Point(0, 0),
+                    // The anchor for this image is the base of the flagpole at (0, 32).
+                    anchor: new google.maps.Point(16, 44)
+                  };
+
+                  marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(userPos[1], userPos[2]),
+                    icon: userPosIcon,
+                    map: map
+                  });
+
+                  var locations = [];
+
+                for(var j = 0; j < searchStrings.length; j++){
+                  geocoder.geocode( { 'address': searchStrings[j][1]}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                      if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
+
+                          var marker = new google.maps.Marker({
+                              position: results[0].geometry.location,
+                              map: map,
+                              title: searchStrings[j][1],
+                              id: searchStrings[j][0]
+                          });
+
+                          google.maps.event.addListener(marker, 'click', function() {
+                              $('.quickmapview-subbox').html(this.id);
+                          });
+
+                      } else {
+                        console.log("No results found");
+                      }
+                    } else {
+                      console.log("Geocode was not successful for the following reason: " + status);
+                    }
+                  });
+                }
+
+
+                //wtf is going on here
+
+                for (var j = 0; j < locations.length; j++) {
+
+                }
+
+            //map.setCenter(locations[2][1].getPosition());
+        }
+     }
 
     //if at bottom of page
     $(window).scroll(function() {
