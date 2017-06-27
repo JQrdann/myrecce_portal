@@ -40,7 +40,9 @@
     </div>
 
     <div class="quickmapview-subbox">
-        <h3>Click a recce or a map icon to view it's info here!</h3>
+        <div class='recce-quick-view'>
+            <h3>Click a recce or a map icon to view it's info here!</h3>
+        </div>
     </div>
 
     <div id='loader'>

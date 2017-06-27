@@ -129,9 +129,6 @@ $(document).ready(function() {
         eye.toggleClass('watched');
         return;
       }
-
-      var id = $(this).attr('data-id');
-      $('.quickmapview-subbox').html(id);
     });
 
     initMap();
@@ -185,7 +182,6 @@ $(document).ready(function() {
             console.log('There was an error');
         }
 
-
         function successFunction(position) {
             lat = position.coords.latitude;
             lng = position.coords.longitude;
@@ -194,67 +190,109 @@ $(document).ready(function() {
             var userPos = ['Your Location', lat, lng];
 
             var map = new google.maps.Map(document.getElementById('quickmapview'), {
-              zoom: 10,
+              zoom: 12,
               center: new google.maps.LatLng(userPos[1], userPos[2]),
               mapTypeId: google.maps.MapTypeId.ROADMAP
             });
 
-            var infowindow = new google.maps.InfoWindow();
-            var geocoder = new google.maps.Geocoder;
+            var marker, markers = [];
 
-            var marker, i;
+            var userIcon = {
+                url: 'icons/mapIcon.png',
+                size: new google.maps.Size(16, 16),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(8, 8)
+            };
 
-            var userPosIcon = {
-                    url: 'icons/mapIcon.png',
-                    // This marker is 20 pixels wide by 32 pixels high.
-                    size: new google.maps.Size(32, 44),
-                    // The origin for this image is (0, 0).
-                    origin: new google.maps.Point(0, 0),
-                    // The anchor for this image is the base of the flagpole at (0, 32).
-                    anchor: new google.maps.Point(16, 44)
-                  };
+            var recceIcon = {
+                url: 'icons/mappin.png',
+                size: new google.maps.Size(32, 47),
+                origin: new google.maps.Point(0, 0),
+                anchor: new google.maps.Point(16, 47)
+            };
 
-                  marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(userPos[1], userPos[2]),
-                    icon: userPosIcon,
-                    map: map
-                  });
+            var userMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(userPos[1], userPos[2]),
+                icon: userIcon,
+                map: map
+            });
 
-                  var locations = [];
+            codeLocations(searchStrings, map);
 
-                for(var j = 0; j < searchStrings.length; j++){
-                  geocoder.geocode( { 'address': searchStrings[j][1]}, function(results, status) {
+            function codeLocations(list, map) {
+                for (var i = 0; i < list.length; i++) {
+                    console.log("Looping " + list[i][1]);
+                    var geocoder = new google.maps.Geocoder();
+                    var geoOptions = {
+                        address: list[i][1]
+                    };
+                    geocoder.geocode(geoOptions, createGeocodeCallback(list[i], map));
+                }
+            }
+
+            function createGeocodeCallback(item, map) {
+                console.log("Generating geocode callback for " + item[0]);
+                return function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
-                      if (status != google.maps.GeocoderStatus.ZERO_RESULTS) {
-
-                          var marker = new google.maps.Marker({
-                              position: results[0].geometry.location,
-                              map: map,
-                              title: searchStrings[j][1],
-                              id: searchStrings[j][0]
-                          });
-
-                          google.maps.event.addListener(marker, 'click', function() {
-                              $('.quickmapview-subbox').html(this.id);
-                          });
-
-                      } else {
-                        console.log("No results found");
-                      }
+                      console.log("Geocoding " + item[0] + " OK");
+                      addMarker(map, item, results[0].geometry.location);
                     } else {
-                      console.log("Geocode was not successful for the following reason: " + status);
+                      console.log("Geocode failed " + status);
                     }
-                  });
+               }
+            }
+
+            function addMarker(map, item, location) {
+                console.log("Setting marker for " + item.location + " (location: " + location + ")");
+                var marker = new google.maps.Marker({
+                     position: location,
+                     map: map,
+                     icon: recceIcon,
+                     id: item[0]
+                 })
+                 markers.push(marker);
+                //marker.setTitle(item.title);
+                new google.maps.event.addListener(marker, "click", function() {
+                    recceQuickViewSearch(this.id);
+                    for(var i = 0; i < markers.length; i++){
+                        markers[i].setIcon('icons/mappin.png');
+                    }
+                    this.setIcon("icons/mapPinSelected.png");
+                });
+            }
+
+            function recceQuickViewSearch(id){
+                $.post('single-search.php', {
+                    "id": id,
+                }, function(data, status) {
+                    if (status == "success") {
+                        var obj = JSON.parse(data); //automatically appends to current json object
+                        renderQuickView(obj)
+                    } else {
+                        $(".quickmapview-subbox").html("There was an error fetching the data from the server");
+                    }
+                });
+            }
+
+            function renderQuickView(item){
+                $(".quickmapview-subbox").css('background-image', 'url('+item[0].Photo1+')');
+                var content = item[0].Name + '<br><br>' + item[0].Description;
+                $(".recce-quick-view").html(content);
+            }
+
+            $('.recce').click(function(){
+                for(var i = 0; i < markers.length; i++){
+                    if(markers[i].id == $(this).attr('data-id')){
+                        var latlng = markers[i].getPosition();
+                        map.panTo(latlng);
+                        for(var j = 0; j < markers.length; j++){
+                            markers[j].setIcon('icons/mappin.png');
+                        }
+                        markers[i].setIcon("icons/mapPinSelected.png");
+                    }
                 }
-
-
-                //wtf is going on here
-
-                for (var j = 0; j < locations.length; j++) {
-
-                }
-
-            //map.setCenter(locations[2][1].getPosition());
+                recceQuickViewSearch($(this).attr('data-id'));
+            })
         }
      }
 

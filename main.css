@@ -289,14 +289,22 @@ main {
 .quickmapview-subbox {
     color: white;
     background-color: #27ae60;
-    height: calc(20% - 40px);
-    width: calc(38% - 40px);
 
-    padding: 20px;
+    background-size: cover;
+
+    height: 20%;
+    width: 38%;
 
     bottom: 0;
     right: 0;
     position: fixed;
+}
+
+.recce-quick-view{
+    padding: 20px;
+    background-color: rgba(0,0,0,.8);
+    height: 100%;
+    width: 100%;
 }
 
 .search-recces {
