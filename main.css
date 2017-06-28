@@ -27,7 +27,7 @@ aside:hover {
     width: 220px;
 }
 
-.menu-text{
+.menu-text {
     opacity: 0;
     transition: 0.3s;
 }
@@ -36,40 +36,40 @@ aside:hover span {
     opacity: 1;
 }
 
-aside:hover .logout{
+aside:hover .logout {
     opacity: 1;
 }
 
-aside:hover .social-media-icons{
+aside:hover .social-media-icons {
     opacity: 1
 }
 
-#time-overlay{
-  right: 0;
-  text-align: right;
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: rgba(43,60,78, .9);
-  padding: 50px;
-  color: white;
-  z-index: 6;
-  opacity: 0;
-  transition: opacity .3s;
-  pointer-events: none;
+#time-overlay {
+    right: 0;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(43, 60, 78, .9);
+    padding: 50px;
+    color: white;
+    z-index: 6;
+    opacity: 0;
+    transition: opacity .3s;
+    pointer-events: none;
 }
 
-#time-overlay h1{
-  font-size: 15em;
-}
-#time-overlay h2{
-  font-size: 5em;
+#time-overlay h1 {
+    font-size: 15em;
 }
 
-aside:hover + #time-overlay{
-  opacity: 1;
+#time-overlay h2 {
+    font-size: 5em;
 }
 
+aside:hover+#time-overlay {
+    opacity: 1;
+}
 
 .logo {
     margin: 0 auto;
@@ -179,6 +179,7 @@ aside:hover + #time-overlay{
     transition: 0.3s;
 }
 
+
 /* Bounce To Right */
 
 .hvr-bounce-to-right {
@@ -278,7 +279,6 @@ main {
     position: fixed !important;
     right: 0;
     z-index: 5;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -289,20 +289,17 @@ main {
 .quickmapview-subbox {
     color: white;
     background-color: #27ae60;
-
     background-size: cover;
-
     height: 20%;
     width: 38%;
-
     bottom: 0;
     right: 0;
     position: fixed;
 }
 
-.recce-quick-view{
+.recce-quick-view {
     padding: 20px;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0, 0, 0, .8);
     height: 100%;
     width: 100%;
 }
@@ -315,91 +312,106 @@ main {
     text-align: center;
 }
 
-.recce{
-  border-radius: .1em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  position: relative;
-  display: inline-block;
-  margin: 1%;
-  width: 300px;
-  height: 275px;
-  text-align: left;
-  cursor: pointer;
+.recce {
+    border-radius: .1em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    position: relative;
+    display: inline-block;
+    margin: 1%;
+    width: 300px;
+    height: 275px;
+    text-align: left;
+    cursor: pointer;
+    transition: .3s;
 }
-.recce-picture{
-  width: 100%;
-  height: 200px;
-  background-size: cover;
+
+.recce-active{
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.16), 0 6px 15px rgba(0, 0, 0, 0.23);
 }
-.recce-favourite{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
+
+.recce-picture {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
 }
-.recce-favourite path{
-  fill: white;
+
+.recce-favourite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
 }
-.heart{
-  width: 35px;
-  height: 35px;
-  padding-left: 10px;
-  padding-top: 10px;
+
+.recce-favourite path {
+    fill: white;
+}
+
+.heart {
+    width: 35px;
+    height: 35px;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .eye {
-  width: 25px;
-  height: 25px;
-  border: solid 1pt #fff;
-  border-radius:  75% 15%;
-  position: absolute;
-  left: 55px;
-  top: 15px;
-  transform: rotate(45deg);
-  transition: .3s;
+    width: 25px;
+    height: 25px;
+    border: solid 1pt #fff;
+    border-radius: 75% 15%;
+    position: absolute;
+    left: 55px;
+    top: 15px;
+    transform: rotate(45deg);
+    transition: .3s;
 }
-.watched{
-  background-color: #27ae60;;
-  border: solid 1pt #27ae60;;
+
+.watched {
+    background-color: #27ae60;
+    ;
+    border: solid 1pt #27ae60;
+    ;
 }
+
 .pupil {
-  display: block;
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border: solid 1pt white;
-  border-radius: 50%;
-  left: 8px;
-  top: 9px;
-  background-color: white;
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border: solid 1pt white;
+    border-radius: 50%;
+    left: 8px;
+    top: 9px;
+    background-color: white;
 }
 
+.recce-price {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-align: right;
+    width: auto;
+    height: 15px;
+}
 
-.recce-price{
-  color: white;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  text-align: right;
-  width: auto;
-  height: 15px;
+.recce-details {
+    width: 100%;
+    height: 75px;
+    background: white;
 }
-.recce-details{
-  width: 100%;
-  height: 75px;
-  background: white;
+
+.recce-location {
+    color: #aaaaaa;
+    padding: 10px;
+    height: 20px;
+    width: calc(100% - 20px);
 }
-.recce-location{
-  color: #aaaaaa;
-  padding: 10px;
-  height: 20px;
-  width: calc(100% - 20px);
-}
-.recce-name{
-  padding-left: 10px;
-  height: 25px;
-  width: calc(100% - 20px);
+
+.recce-name {
+    padding-left: 10px;
+    height: 25px;
+    width: calc(100% - 20px);
 }
 
 .welcome-message {
@@ -738,7 +750,8 @@ main {
 }
 
 .createareccegodiv {
-    margin: 10px 0 20px 0; /*why is there a duplicate of this above?*/
+    margin: 10px 0 20px 0;
+    /*why is there a duplicate of this above?*/
 }
 
 .createreccego {
@@ -853,7 +866,7 @@ main {
 }
 
 .change-username {
-  float: left;
+    float: left;
 }
 
 .change-email {
@@ -862,10 +875,10 @@ main {
 }
 
 .change-firstlastname {
-  float: none;
-  clear: both;
-  margin-left: 30px;
-  padding-top: 20px;
+    float: none;
+    clear: both;
+    margin-left: 30px;
+    padding-top: 20px;
 }
 
 .change-firstname {
@@ -878,10 +891,10 @@ main {
 }
 
 .change-fulladdress {
-  float: none;
-  clear: both;
-  margin-left: 30px;
-  padding-top: 20px;
+    float: none;
+    clear: both;
+    margin-left: 30px;
+    padding-top: 20px;
 }
 
 .change-city {
@@ -1200,6 +1213,7 @@ main {
     background-color: #f7f7f7;
 }
 
+
 /* SECTION 1: BASIC DETAILS */
 
 .sec1-title {
@@ -1310,6 +1324,7 @@ input[type=locationtype]:focus {
     border: 3px solid #2ecc71;
 }
 
+
 /* SECTION 2: WHERE IS LOCATION, LOCATED */
 
 .sec2-title {
@@ -1370,6 +1385,7 @@ input[type=locationpostcode]:focus {
     border: 3px solid #2ecc71;
 }
 
+
 /* SECTION 3: LOCATION PHOTOS */
 
 .sec3-title {
@@ -1429,6 +1445,7 @@ input[type=locationphotos] {
 input[type=locationphotos]:focus {
     border: 3px solid #2ecc71;
 }
+
 
 /* SECTION 4: FEATURES AND PRICE RANGE */
 
@@ -1661,7 +1678,7 @@ input[type=locationprice2]:focus {
     height: 500px;
 }
 
-#loader{
+#loader {
     width: 100%;
     height: 50px;
     background-color: blue;
