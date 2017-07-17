@@ -85,22 +85,23 @@
     </section>
 
     <section class='create-section'>
-
+      <h1>Section 2</h1>
     </section>
 
     <section class='create-section'>
-
+      <h1>Section 3</h1>
     </section>
 
     <section class='create-section'>
-
+      <h1>Section 4</h1>
     </section>
 
-    <section class='create-section'>
-
+    <section class='create-section last'>
+      <h1>Section 5</h1>
     </section>
-    <div id='create-back' class='create-button'>&#8592 Back</div>
-    <div id='create-next' class='create-button'>Next</div>
+
+    <div id='create-back' class='create-button back-hide clickable'>&#8592 Back</div>
+    <div id='create-next' class='create-button clickable'>Next</div>
   </div>
 
   <div id='create-summary'>

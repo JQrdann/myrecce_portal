@@ -1705,10 +1705,10 @@ input[type=locationprice2]:focus {
   width: 15px !important;
   height: 15px;
   background-color: white;
-  /*border: 1px solid black;*/
   border-radius: 3em;
   margin: 0 auto;
   margin: 15px;
+  transition: .3s;
 }
 
 .current-page{
@@ -1725,6 +1725,7 @@ input[type=locationprice2]:focus {
   height: calc(100vh - 80px);
   border-radius: 1em;
   padding: 20px;
+  overflow: hidden;
 }
 
 #create-modal h1{
@@ -1805,6 +1806,9 @@ input[type=locationprice2]:focus {
 }
 #create-back:hover{
   opacity: 1;
+}
+.back-hide{
+  opacity: 0 !important;
 }
 
 .create-input{
