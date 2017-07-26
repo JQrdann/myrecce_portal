@@ -96,9 +96,6 @@ function addFavourite(id){
     url: 'favourite.php',
     data: {action: 'add', recceID: id},
     type: 'post',
-    success: function(data){
-      alert(data);
-    }
   });
 }
 
@@ -184,12 +181,14 @@ function toggleHeartIcon(t){
   var src = heart.attr('src');
   var recceID = heart.closest('.recce').attr('data-id');
 
-  if (src == 'icons/heart-empty.svg') {
-      heart.attr("src", 'icons/heart.svg');
-      addFavourite(recceID);
-  } else {
-      heart.attr("src", 'icons/heart-empty.svg');
-      removeFavourite(recceID);
+  if(heart.attr('data-fav') == 'true'){
+    heart.attr('data-fav', 'false');
+    heart.attr("src", 'icons/heart-empty.svg');
+    removeFavourite(recceID);
+  }else{
+    heart.attr('data-fav', 'true');
+    heart.attr("src", 'icons/heart.svg');
+    addFavourite(recceID);
   }
 
   return;
@@ -217,7 +216,7 @@ function search(count) {
 function showItems(items) {
     $(".search-recces").html("");
     for (var i = 0; i < items.length; i++) {
-        $content = "<div class='recce' data-id='" + items[i].ID + "'><div class='recce-picture' style='background-image: url(" + '"' + items[i].Photo1 + '"' + ")'><div class='recce-favourite'><img class='heart' src='icons/heart-empty.svg'></div><div class='eye'><div class='pupil'></div></div><div class='recce-price'>&pound;" + items[i].Price + "</div></div><div class='recce-details'><div class='recce-location'>"+items[i].County+"</div><div class='recce-name'>" + items[i].Name + "</div></div></div>"
+        $content = "<div class='recce' data-id='" + items[i].ID + "'><div class='recce-picture' style='background-image: url(" + '"' + items[i].Photo1 + '"' + ")'><div class='recce-favourite'><img class='heart' data-fav='false' src='icons/heart-empty.svg'></div><div class='eye'><div class='pupil'></div></div><div class='recce-price'>&pound;" + items[i].Price + "</div></div><div class='recce-details'><div class='recce-location'>"+items[i].County+"</div><div class='recce-name'>" + items[i].Name + "</div></div></div>"
         $(".search-recces").append($content);
 
         var searchString = items[i].AddressLine1 + ' ' + items[i].AddressLine2 + ' ' + items[i].City + ' ' + items[i].Postcode;
@@ -309,6 +308,7 @@ function initMap() {
                 icon: recceIcon,
                 id: item[0]
             })
+
             markers.push(marker);
             //marker.setTitle(item.title);
             new google.maps.event.addListener(marker, "click", function() {

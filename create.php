@@ -81,15 +81,43 @@
           <p>I know the owner</p>
         </label>
       </div>
-
     </section>
 
     <section class='create-section'>
-      <h1>Section 2</h1>
+      <div class='input-wrapper'>
+        <label for='description'>Let's get a short descritption for your Recce</label>
+        <textarea required class='create-input create-textarea'></textarea>
+      </div>
     </section>
 
     <section class='create-section'>
-      <h1>Section 3</h1>
+      <div class='input-wrapper' style='text-align: center;'>
+        <label for='description'>Now for some pictures!</label>
+        <div class='image-upload'>
+          <input type='file' name='pic1' data-pic-id='1'>
+          <div class='custom-file-upload' data-pic-id='1'>+</div>
+        </div>
+        <div class='image-upload'>
+          <input type='file' name='pic2' data-pic-id='2'>
+          <div class='custom-file-upload' data-pic-id='2'>+</div>
+        </div>
+        <div class='image-upload'>
+          <input type='file' name='pic3' data-pic-id='3'>
+          <div class='custom-file-upload' data-pic-id='3'>+</div>
+        </div>
+        <div class='image-upload'>
+          <input type='file' name='pic4' data-pic-id='4'>
+          <div class='custom-file-upload' data-pic-id='4'>+</div>
+        </div>
+        <div class='image-upload'>
+          <input type='file' name='pic5' data-pic-id='5'>
+          <div class='custom-file-upload' data-pic-id='5'>+</div>
+        </div>
+        <div class='image-upload'>
+          <input type='file' name='pic6' data-pic-id='6'>
+          <div class='custom-file-upload' data-pic-id='6'>+</div>
+        </div>
+      </div>
     </section>
 
     <section class='create-section'>

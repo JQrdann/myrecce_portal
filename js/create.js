@@ -1,9 +1,30 @@
 $(document).ready(function(){
 
+  $('.custom-file-upload').click(function(){
+    $(this).prev().click();
+  });
+
+  function readURL(input, picID) {
+
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+
+          reader.onload = function (e) {
+              $('.custom-file-upload[data-pic-id='+picID+']').css('background-image', 'url("'+e.target.result+'")');
+          }
+
+          reader.readAsDataURL(input.files[0]);
+      }
+  }
+
+  $(".image-upload input").change(function(){
+      readURL(this, $(this).attr('data-pic-id'));
+  });
+
   function checkFormValid(){
     var valid = true;
 
-    $('.create-active-section input').each(function(){
+    $('.create-active-section input, .create-active-section textarea').each(function(){
       if(!$(this).val() && $(this).attr('required')){
         valid = false;
       }
@@ -48,7 +69,7 @@ $(document).ready(function(){
       }, 300); //stop rapid next clicking
 
       $('.create-active-section').eq(0).css('position', 'absolute').animate({
-        'left':'-500'
+        'left':'-700'
       },375, function(){
         $(this).removeClass('create-active-section');
       });
@@ -74,7 +95,7 @@ $(document).ready(function(){
         $('#create-next').fadeOut(300);
       }
 
-      checkFormValid();
+      setTimeout(checkFormValid(), 500);
     }
   });
 
