@@ -12,7 +12,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="icon" type="image/ico" href="favicon.ico"/>
     <script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script src="js/jquery-2.2.0.min.js" type="text/javascript"></script>
@@ -33,7 +33,6 @@
               <a href='search'><li <?php if($page == 'search'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/search.svg" width="25px" height="25px"><span class="menu-text">  SEARCH</span></li></a> <!-- Undecided (maybe just for 'Filmmaker' account type) -->
               <a href='myrecces'><li <?php if($page == 'myrecces'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/my-recces.svg" width="25px" height="25px"><span class="menu-text">  MY RECCES</span></li></a> <!-- For 'Location Provider' account type -->
               <a href='favourites'><li <?php if($page == 'favourites'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/favourites.svg" width="25px" height="25px"><span class="menu-text">  FAVOURITES</span></li></a> <!-- For 'Filmmaker' account type -->
-              <a href='calendar'><li <?php if($page == 'calendar'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/calendar.svg" width="25px" height="25px"><span class="menu-text">  CALENDAR</span></li></a> <!-- Undecided (maybe just for 'Location Provider' account type) -->
               <a href='myaccount'><li <?php if($page == 'myaccount'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/myaccount.png" width="25px" height="25px"><span class="menu-text">  MY ACCOUNT</span></li></a> <!-- For both account types -->
               <a href='admin'><li <?php if($page == 'admin'){echo 'class="active-menu"';}else{echo 'class="hvr-bounce-to-right"';}?>class="hvr-bounce-to-right"><img class="icon" src="icons/admin.png" width="25px" height="25px"><span class="menu-text">  ADMIN</span></li></a> <!-- For admin account types -->
             </ul>

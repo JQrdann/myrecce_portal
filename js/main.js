@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $(".home-content").css("opacity", 0);
 
     $(window).load(function() {
@@ -87,73 +88,126 @@ $(document).ready(function() {
         }
     }
 
-    $('main').on('click', '.recce', function(e) {
-        if ($(e.target).attr('class') == 'heart') {
-            var heart = $('.heart', this);
-            heart.stop().animate({
-                height: 45,
-                width: 45,
-                'padding-left': '5px',
-                'padding-top': '5px'
-            }, 150).delay(50).animate({
-                height: 35,
-                width: 35,
-                'padding-left': '10px',
-                'padding-top': '10px'
-            }, 150);
-
-            var src = heart.attr('src');
-
-            if (src == 'icons/heart-empty.svg') {
-                heart.attr("src", 'icons/heart.svg');
-            } else {
-                heart.attr("src", 'icons/heart-empty.svg');
-            }
-
-            return;
-        }
-
-        if ($(e.target).attr('class') == 'eye' || $(e.target).attr('class') == 'pupil' || $(e.target).attr('class') == 'eye watched') {
-            var eye = $('.eye', this);
-            var pupil = $('.pupil', this);
-            pupil.stop().animate({
-                left: '2px',
-                top: '14px'
-            }, 150).delay(50).animate({
-                left: '13px',
-                top: '3px'
-            }, 300).animate({
-                left: '8px',
-                top: '9px'
-            }, 150);
-            eye.toggleClass('watched');
-            return;
-        }
-    });
-
     initMap();
 });
+
+function addFavourite(id){
+  $.ajax({
+    url: 'favourite.php',
+    data: {action: 'add', recceID: id},
+    type: 'post',
+  });
+}
+
+function removeFavourite(id){
+  $.ajax({
+    url: 'favourite.php',
+    data: {action: 'remove', recceID: id},
+    type: 'post',
+  });
+}
+
+function setFavourites(){
+  $.ajax({
+    url: 'favourite.php',
+    data: {action: 'view'},
+    type: 'post',
+    success : function(data){
+      var favs = JSON.parse(data);
+      $('.recce').each(function(){
+        for (var i = 0; i < favs.length; i++){
+          id = favs[i].recceID;
+          if($(this).attr('data-id') == id){
+            toggleHeartIcon( $('.heart').closest('.recce[data-id='+id+']') );
+          }
+        }
+      });
+    }
+  });
+}
+
+function fillFavourites(){
+  $.ajax({
+    url: 'search-script.php',
+    data: {action: 'favourites'},
+    type: 'post',
+    success : function(data){
+      console.log(data);
+      $obj = JSON.parse(data); //automatically appends to current json object
+      showItems($obj);
+    }
+  });
+}
+
+function recceListeners(){
+  $('.heart').click(function(){
+    toggleHeartIcon($(this).closest('.recce'));
+  });
+
+  $('.recce').click(function(e) {
+      if ($(e.target).attr('class') == 'eye' || $(e.target).attr('class') == 'pupil' || $(e.target).attr('class') == 'eye watched') {
+          var eye = $('.eye', this);
+          var pupil = $('.pupil', this);
+          pupil.stop().animate({
+              left: '2px',
+              top: '14px'
+          }, 150).delay(50).animate({
+              left: '13px',
+              top: '3px'
+          }, 300).animate({
+              left: '8px',
+              top: '9px'
+          }, 150);
+          eye.toggleClass('watched');
+          return;
+      }
+  });
+}
+
+function toggleHeartIcon(t){
+  var heart = t.find('.heart');
+  heart.stop().animate({
+      height: 45,
+      width: 45,
+      'padding-left': '5px',
+      'padding-top': '5px'
+  }, 150).delay(50).animate({
+      height: 35,
+      width: 35,
+      'padding-left': '10px',
+      'padding-top': '10px'
+  }, 150);
+
+  var src = heart.attr('src');
+  var recceID = heart.closest('.recce').attr('data-id');
+
+  if (src == 'icons/heart-empty.svg') {
+      heart.attr("src", 'icons/heart.svg');
+      addFavourite(recceID);
+  } else {
+      heart.attr("src", 'icons/heart-empty.svg');
+      removeFavourite(recceID);
+  }
+
+  return;
+}
 
 var searchStrings = [];
 
 //AJAX function to print stock items
 function search(count) {
     //$titleOp = $("#filter-title-option").val();
-    $title = $("#search").val();
+    var title = $("#search").val();
 
-    //AJAX call
-    $.post('search-script.php', {
-        "title": $title,
-        "count": count
-    }, function(data, status) {
-        if (status == "success") {
-            console.log(data);
-            $obj = JSON.parse(data) //automatically appends to current json object
-            //render the object
-            showItems($obj)
-        } else {
-            $(".search-recces").html("There was an error fetching the data from the server");
-        }
+    $.ajax({
+      url: 'search-script.php',
+      data: {action: 'search', count: count, title: title},
+      type: 'post',
+      success : function(data){
+        console.log(data);
+        $obj = JSON.parse(data); //automatically appends to current json object
+        showItems($obj);
+      }
     });
 }
 
@@ -166,6 +220,9 @@ function showItems(items) {
         var searchString = items[i].AddressLine1 + ' ' + items[i].AddressLine2 + ' ' + items[i].City + ' ' + items[i].Postcode;
         searchStrings.push([items[i].ID, searchString]);
     }
+
+    setFavourites();
+    recceListeners();
 }
 
 function initMap() {

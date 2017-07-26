@@ -15,7 +15,7 @@
             </div>
 
             <div class="createareccegodiv">
-              <a href='createrecce.php' class="createreccego">Create a Recce</a>
+              <a href='create' class="createreccego">Create a Recce</a>
             </div>
         </div>
 

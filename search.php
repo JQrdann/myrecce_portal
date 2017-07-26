@@ -59,12 +59,6 @@
     $(document).ready(function(){
         search(0);
     });
-
-    $(document).ready(function() {
-
-
-
-    });
 </script>
 </body>
 </html>

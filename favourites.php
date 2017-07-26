@@ -11,7 +11,17 @@
           are creating, making it easier to sort recces/locations.</p>
         </div>
 
+        <div class='search-recces'>
+
+        </div>
+
       </div>
+
+      <script>
+        $(document).ready(function(){
+          fillFavourites();
+        });
+      </script>
     </main>
 </body>
 </html>
