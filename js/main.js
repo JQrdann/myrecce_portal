@@ -96,6 +96,9 @@ function addFavourite(id){
     url: 'favourite.php',
     data: {action: 'add', recceID: id},
     type: 'post',
+    success: function(data){
+      alert(data);
+    }
   });
 }
 
