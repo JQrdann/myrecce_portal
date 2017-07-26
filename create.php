@@ -19,6 +19,7 @@
       <div class='progress-marker'></div>
       <div class='progress-marker'></div>
       <div class='progress-marker'></div>
+      <div class='progress-marker'></div>
     </div>
   </div>
 
@@ -96,26 +97,50 @@
         <div class='image-upload'>
           <input type='file' name='pic1' data-pic-id='1'>
           <div class='custom-file-upload' data-pic-id='1'>+</div>
+          <div class='custom-img-change-remove'>
+            <div class='custom-img-change'>Change</div>
+            <div class='custom-img-remove'>Remove</div>
+          </div>
         </div>
         <div class='image-upload'>
           <input type='file' name='pic2' data-pic-id='2'>
           <div class='custom-file-upload' data-pic-id='2'>+</div>
+          <div class='custom-img-change-remove'>
+            <div class='custom-img-change'>Change</div>
+            <div class='custom-img-remove'>Remove</div>
+          </div>
         </div>
         <div class='image-upload'>
           <input type='file' name='pic3' data-pic-id='3'>
           <div class='custom-file-upload' data-pic-id='3'>+</div>
+          <div class='custom-img-change-remove'>
+            <div class='custom-img-change'>Change</div>
+            <div class='custom-img-remove'>Remove</div>
+          </div>
         </div>
         <div class='image-upload'>
           <input type='file' name='pic4' data-pic-id='4'>
           <div class='custom-file-upload' data-pic-id='4'>+</div>
+          <div class='custom-img-change-remove'>
+            <div class='custom-img-change'>Change</div>
+            <div class='custom-img-remove'>Remove</div>
+          </div>
         </div>
         <div class='image-upload'>
           <input type='file' name='pic5' data-pic-id='5'>
           <div class='custom-file-upload' data-pic-id='5'>+</div>
+          <div class='custom-img-change-remove'>
+            <div class='custom-img-change'>Change</div>
+            <div class='custom-img-remove'>Remove</div>
+          </div>
         </div>
         <div class='image-upload'>
           <input type='file' name='pic6' data-pic-id='6'>
           <div class='custom-file-upload' data-pic-id='6'>+</div>
+          <div class='custom-img-change-remove'>
+            <div class='custom-img-change'>Change</div>
+            <div class='custom-img-remove'>Remove</div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,8 +1,30 @@
 $(document).ready(function(){
 
   $('.custom-file-upload').click(function(){
-    $(this).prev().click();
+
+    if($(this).attr('data-hasimg') == 'true'){
+      $(this).next().addClass('view-change');
+    }else{
+      $(this).prev().click();
+    }
+
   });
+
+  $('.custom-img-change').click(function(){
+    $(this).parent().removeClass('view-change');
+    $(this).parent().prev().prev().click();
+  });
+
+  $('.custom-img-remove').click(function(){
+    reset($(this).parent().prev().prev());
+    $(this).parent().removeClass('view-change');
+    $(this).parent().prev().css('background-image','').attr('data-hasimg','false');
+  });
+
+  function reset(e){
+    e.wrap('<form>').closest('form').get(0).reset();
+    e.unwrap();
+  }
 
   function readURL(input, picID) {
 
@@ -10,7 +32,7 @@ $(document).ready(function(){
           var reader = new FileReader();
 
           reader.onload = function (e) {
-              $('.custom-file-upload[data-pic-id='+picID+']').css('background-image', 'url("'+e.target.result+'")');
+              $('.custom-file-upload[data-pic-id='+picID+']').css('background-image', 'url("'+e.target.result+'")').attr('data-hasimg','true');
           }
 
           reader.readAsDataURL(input.files[0]);

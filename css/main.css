@@ -1923,4 +1923,35 @@ input[type="radio"] {
   background-position: 50% 50%;
 }
 
+.custom-img-change-remove{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  transition: .3s;
+  cursor: pointer;
+}
+.view-change{
+  height: 140px;
+}
+
+.custom-img-change{
+  height: 70px;
+  width: 100%;
+  background-color: #2ecc71;
+  color: white;
+  line-height: 70px;
+  font-size: 1.5em;
+}
+.custom-img-remove{
+  height: 70px;
+  width: 100%;
+  background-color: #eb5353;
+  color: white;
+  line-height: 70px;
+  font-size: 1.5em;
+}
+
 /* ------- end of create page -------- */
